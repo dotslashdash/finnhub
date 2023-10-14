@@ -6,8 +6,8 @@ defmodule Finnhub.Quote do
 
   def url(), do: @base_url
 
-  def fetch(symbol, config \\ %Config{}) do
+  def fetch(params, config \\ %Config{}) do
     url()
-    |> Client.api_get(config, [symbol: symbol])
+    |> Client.api_get(config, params)
   end
 end
